@@ -23,9 +23,9 @@ def main():
     Just some sample behavior based on the README. Feel free to try your own.
     """
     haiku_string = "clouds ,mur,mur ,dark,ly /it ,is ,a ,blin,ding ,ha,bit /ga,zing ,at ,the ,moon "
-    if is_haiku(haiku_string) not None and is_haiku(haiku_string):
+    if is_haiku(haiku_string) is not None and is_haiku(haiku_string):
         print("This is a valid haiku based on its structure.")
-    elif is_haiku(haiku_string) not None and not is_haiku(haiku_string):
+    elif is_haiku(haiku_string) is not None and not is_haiku(haiku_string):
         print("This is not a valid haiku based on its structure.")
 
     # formatted_haiku = haiku_string_parser(haiku_string)  # Optional
