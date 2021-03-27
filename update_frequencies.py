@@ -6,7 +6,9 @@ def get_file_contents(file_path):
     :return: A string containing the contents of the file
     """
     file = open(file_path, 'r')
-    return file.read()
+    new_sequence = file.read()
+    file.close()
+    return new_sequence
 
 
 def update_frequencies(old_frequencies, new_sequence):

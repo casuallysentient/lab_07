@@ -1,3 +1,6 @@
+import random
+
+
 def shuffle_create(original_list):
     """
     Creates and returns a list with original_list's elements shuffled in any pseudo-random order.
@@ -5,7 +8,13 @@ def shuffle_create(original_list):
     :param original_list: A list of elements
     :return output_list: A list of the original elements shuffled
     """
-    pass
+    new_list = []
+    for x in range(len(original_list)):
+        random_index = random.randrange(len(original_list))
+        random_item = original_list[random_index]
+        new_list.append(random_item)
+        original_list.pop(random_index)
+    return new_list
 
 
 def shuffle_in_place(original_list):
@@ -15,7 +24,12 @@ def shuffle_in_place(original_list):
     :param original_list: A list of elements
     :return: None
     """
-    pass
+    for x in range(len(original_list)):
+        random_index = random.randrange(len(original_list))
+        random_item = original_list[random_index]
+        original_list.pop(random_index)
+        original_list.insert(random.randrange(len(original_list)), random_item)
+
 
 
 def main():
