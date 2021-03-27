@@ -26,11 +26,15 @@ def get_vowel_frequency(corpus):
             num_o += 1
         elif corpus[x] in ("u", "U"):
             num_u += 1
-    a_frequency = round(((num_a / len(corpus)) * 100), 2)
-    e_frequency = round(((num_e / len(corpus)) * 100), 2)
-    i_frequency = round(((num_i / len(corpus)) * 100), 2)
-    o_frequency = round(((num_o / len(corpus)) * 100), 2)
-    u_frequency = round(((num_u / len(corpus)) * 100), 2)
+    if len(corpus) == 0:
+        length = 1
+    else:
+        length = len(corpus)
+    a_frequency = round(((num_a / length) * 100), 2)
+    e_frequency = round(((num_e / length) * 100), 2)
+    i_frequency = round(((num_i / length) * 100), 2)
+    o_frequency = round(((num_o / length) * 100), 2)
+    u_frequency = round(((num_u / length) * 100), 2)
     return [['a', a_frequency], ['e', e_frequency], ['i', i_frequency], ['o', o_frequency], ['u', u_frequency]]
 
 
@@ -38,7 +42,7 @@ def main():
     """
     Just some sample behavior based on the README. Feel free to try your own.
     """
-    sample_text = "The French horn (since the 1930s known simply as the \"horn\" in professional music circles) is a brass instrument made of tubing wrapped into a coil with a flared bell. The double horn in F/Bb (technically a variety of German horn) is the horn most often used by players in professional orchestras and bands. A musician who plays a horn is known as a horn player or hornist."
+    sample_text = "\/\/ |-| @ -|-  ! $  -|- |-| ! $ ?"
     vowel_frequencies = get_vowel_frequency(sample_text)
     print(vowel_frequencies)
 
